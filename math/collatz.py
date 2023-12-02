@@ -6,14 +6,18 @@
 # This doesn't do anything bt default, it's just a function
 
 def collatz(n):
+    try:
+        n = int(n)
+    except ValueError:
+        return 'make sure n is an integer.'
     output = []
     while n != 1:
         if n % 2 == 0: # If even
-            n = n/2
+            n = int(n/2)
             output.append(n)
         else: # If odd
-            n = 3 * n + 1
+            n = int(3 * n + 1)
             output.append(n)
     return output
 
-print(collatz(2763))
+#print(collatz(2763))
